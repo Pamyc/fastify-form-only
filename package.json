@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "NODE_ENV=development node --watch src/index.js",
-    "build": "next build ./next",
+    "build": "cd next && npx next build",
     "start": "NODE_ENV=production node src/index.js"
   },
   "dependencies": {
