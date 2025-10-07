@@ -1,0 +1,1 @@
+export default function Page(){return <main><h1>Импорт из архива</h1><a href="/event-analysis">/event-analysis</a></main>}

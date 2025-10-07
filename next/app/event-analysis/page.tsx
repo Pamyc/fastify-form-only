@@ -1,0 +1,1 @@
+import Imported from '../components/_page/page'; export default function EventAnalysis(){return (<main><h1>Event Analysis</h1><Imported/></main>);}

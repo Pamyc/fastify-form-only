@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 
 const dev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 3001;
-const CORS_ORIGIN = process.env.CORS_ORIGIN || ''; // same-origin by default
+const CORS_ORIGIN = process.env.CORS_ORIGIN || '';
 
 const server = Fastify({ logger: true });
 
@@ -23,10 +23,8 @@ if (CORS_ORIGIN) {
   });
 }
 
-// API examples
-server.get('/api/health', async () => ({ ok: true, service: 'fastify-next-integrated-event-analysis' }));
+server.get('/api/health', async () => ({ ok: true, service: 'fastify-next-integrated-clean' }));
 
-// Next.js app
 const nextApp = next({ dev, dir: join(__dirname, '..', 'next') });
 await nextApp.prepare();
 const handle = nextApp.getRequestHandler();
