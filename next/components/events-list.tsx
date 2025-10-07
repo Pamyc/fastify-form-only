@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { Phone, PhoneIncoming, PhoneOutgoing, Mail, MapPin, FileText } from "lucide-react"
 import { ScrollArea } from "./ui/scroll-area"
-import { cn } from "@/lib/utils" // <-- Этот алиас скорее всего сработает, т.к. он ведет в другую папку (lib)
+import { cn } from "../lib/utils" // <-- Этот алиас скорее всего сработает, т.к. он ведет в другую папку (lib)
 import { useEventAnalysis } from "./event-analysis-provider"
 
 const ICON_MAP = {
