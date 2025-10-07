@@ -1,9 +1,10 @@
+// next/components/event-analysis-app.tsx
 "use client"
 
-import { EventAnalysisProvider } from "@/components/event-analysis-provider"
-import { Header } from "@/components/header"
-import { EventsList } from "@/components/events-list"
-import { ChatInterface } from "@/components/chat-interface"
+import { EventAnalysisProvider } from "./event-analysis-provider"
+import { Header } from "./header"
+import { EventsList } from "./events-list"
+import { ChatInterface } from "./chat-interface"
 
 export function EventAnalysisApp() {
   return (
