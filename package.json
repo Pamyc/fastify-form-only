@@ -1,16 +1,19 @@
 {
-  "name": "fastify-form-only",
+  "name": "fastify-next-integrated",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node --watch src/index.js",
-    "start": "node src/index.js"
+    "dev": "NODE_ENV=development node --watch src/index.js",
+    "build": "next build ./next",
+    "start": "NODE_ENV=production node src/index.js"
   },
   "dependencies": {
     "fastify": "^4.28.1",
     "@fastify/cors": "^10.0.1",
-    "@fastify/static": "^7.0.4",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   }
 }

@@ -1,28 +1,23 @@
-# Fastify (Node.js 22) — форма + API в одном приложении (Timeweb Cloud-ready)
+# Fastify + Next.js (интегрировано) — один сервис
 
 ## Запуск локально
 ```bash
 cp .env.example .env
 npm ci
-npm run dev
-# откройте http://localhost:3001
+npm run build
+npm start
+# http://localhost:3001
 ```
 
 ## Маршруты
-- `/` — статическая страница с HTML-формой
-- `GET /api/health` — проверка
-- `POST /api/feedback` — body: `{ name, email, message }`
+- `/` — Next.js
+- `/dashboard`, `/chat`, `/timeline`
+- `/api/health`, `/api/feedback`, `/api/chat`, `/api/events`, `/api/stats`
 
-## Деплой на Timeweb Cloud (как на шаблоне Backend → Fastify)
-- Версия Node: 22
+## Timeweb Cloud
+- Тип: Backend → Node.js → Fastify
+- Node: 22
 - Install: `npm ci`
+- Build: `npm run build`
 - Start: `npm start`
-- Переменные окружения:
-  - `PORT` (например 3001 или порт, который отдаёт платформа)
-  - `CORS_ORIGIN` (оставьте пустым, если фронт тот же домен; задавайте `*` или regex только для кросс-доменных запросов)
-
-## Docker (опционально)
-```bash
-docker build -t fastify-form-only .
-docker run -p 3001:3001 --env PORT=3001 fastify-form-only
-```
+- ENV: `PORT=3001`, `CORS_ORIGIN=`
