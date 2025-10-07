@@ -1,0 +1,16 @@
+{
+  "name": "fastify-form-only",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "fastify": "^4.28.1",
+    "@fastify/cors": "^10.0.1",
+    "@fastify/static": "^7.0.4",
+    "dotenv": "^16.4.5"
+  }
+}
