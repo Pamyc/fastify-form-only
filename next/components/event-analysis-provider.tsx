@@ -17,7 +17,7 @@ import {
   fetchLeadTimeline,
   fetchReferenceStats,
   requestGemini,
-} from "../lib/event-analysis-client"
+} from "@/lib/event-analysis-client"
 
 export type SimplifiedEvent = {
   id: string
