@@ -14,5 +14,5 @@
     "baseUrl": ".",
     "paths": {"@/*": ["./*"]}
   },
-  "include": ["./app", "./components", "./public", "./types"]
+  "include": ["./app","./components","./public","./types"]
 }

@@ -1,1 +1,1 @@
-import './globals.css'; export const metadata={title:'Fix Build'}; export default function RootLayout({children}){return(<html lang='ru'><body><div style={{maxWidth:980,margin:'0 auto',padding:16}}>{children}</div></body></html>)}
+import './globals.css'; export const metadata={title:'Event Analysis'}; export default function RootLayout({children}){return(<html lang='ru'><body><div style={{maxWidth:980,margin:'0 auto',padding:16}}>{children}</div></body></html>)}

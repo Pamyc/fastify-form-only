@@ -1,10 +1,8 @@
-import dynamic from "next/dynamic"
-
-const EventAnalysisApp = dynamic(() => import("@/components/event-analysis-app").then((mod) => mod.EventAnalysisApp), {
-  ssr: false,
-  loading: () => <div className="min-h-screen flex items-center justify-center text-lg">Загрузка...</div>,
-})
-
-export default function Home() {
-  return <EventAnalysisApp />
+import Imported from '../event-analysis-provider';
+export default function PageAdapter(){
+  return (
+    <div style={ display:'grid', gap:12 }>
+      <Imported />
+    </div>
+  );
 }

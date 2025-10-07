@@ -1,1 +1,1 @@
-export default function Page(){return <main><h1>OK</h1></main>}
+export default function Page(){return <main><a href='/event-analysis'>/event-analysis</a></main>}
