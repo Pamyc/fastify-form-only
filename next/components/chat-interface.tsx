@@ -1,11 +1,11 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { Button } from "./ui/button"
+import { Textarea } from "./ui/textarea"
+import { ScrollArea } from "./ui/scroll-area"
 import { Copy } from "lucide-react"
-import { useEventAnalysis } from "@/components/event-analysis-provider"
+import { useEventAnalysis } from "./event-analysis-provider"
 
 export type ChatMessage = {
   id: number
