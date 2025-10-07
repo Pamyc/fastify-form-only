@@ -4,43 +4,18 @@ import next from 'next';
 import cors from '@fastify/cors';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-
 dotenv.config();
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
 const dev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 3001;
 const CORS_ORIGIN = process.env.CORS_ORIGIN || '';
-
 const server = Fastify({ logger: true });
-
-if (CORS_ORIGIN) {
-  await server.register(cors, {
-    origin: CORS_ORIGIN === '*' ? true : new RegExp(CORS_ORIGIN),
-    methods: ['GET','POST','OPTIONS']
-  });
-}
-
+if (CORS_ORIGIN) { await server.register(cors, { origin: CORS_ORIGIN === '*' ? true : new RegExp(CORS_ORIGIN), methods: ['GET','POST','OPTIONS'] }); }
 server.get('/api/health', async () => ({ ok: true, service: 'fastify-next-integrated-clean' }));
-
 const nextApp = next({ dev, dir: join(__dirname, '..', 'next') });
 await nextApp.prepare();
 const handle = nextApp.getRequestHandler();
-
-server.all('/*', (req, reply) => {
-  reply.hijack();
-  handle(req.raw, reply.raw);
-});
-
-const start = async () => {
-  try {
-    await server.listen({ port: PORT, host: '0.0.0.0' });
-    server.log.info(`Server listening on ${PORT} (dev=${dev})`);
-  } catch (err) {
-    server.log.error(err);
-    process.exit(1);
-  }
-};
+server.all('/*', (req, reply) => { reply.hijack(); handle(req.raw, reply.raw); });
+const start = async () => { try { await server.listen({ port: PORT, host: '0.0.0.0' }); server.log.info(`Server listening on ${PORT} (dev=${dev})`);} catch (err) { server.log.error(err); process.exit(1);} };
 start();
