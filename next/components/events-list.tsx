@@ -2,9 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react"
 import { Phone, PhoneIncoming, PhoneOutgoing, Mail, MapPin, FileText } from "lucide-react"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { cn } from "@/lib/utils"
-import { useEventAnalysis } from "@/components/event-analysis-provider"
+import { ScrollArea } from "./ui/scroll-area"
+import { cn } from "@/lib/utils" // <-- Этот алиас скорее всего сработает, т.к. он ведет в другую папку (lib)
+import { useEventAnalysis } from "./event-analysis-provider"
 
 const ICON_MAP = {
   "call-outgoing": { icon: PhoneOutgoing, bg: "bg-blue-50", color: "text-blue-500" },
