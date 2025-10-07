@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["dom", "es2020"],
+    "lib": ["dom", "dom.iterable", "esnext"], // Добавил dom.iterable и esnext для полноты
     "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "bundler",
@@ -11,17 +11,23 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": ".", // Оставляем baseUrl в корне
+    "noEmit": true, // Важно для Next.js
+    "incremental": true, // Улучшает скорость сборки
+    "plugins": [ // Плагин для Next.js
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".", // Теперь "." означает папку /next
     "paths": {
-      "@/*": ["./next/*"] // Указываем, что @/ ведет в папку next
+      "@/*": ["./*"] // @/* теперь правильно указывает на корень папки /next
     }
   },
-  // Также нужно обновить пути в include, чтобы они были относительны корня
   "include": [
-    "./next/app",
-    "./next/components",
-    "./next/lib",
-    "./next/public",
-    "./next/types"
-  ]
+    "next-env.d.ts", // Стандартный файл Next.js
+    "**/*.ts", 
+    "**/*.tsx", 
+    ".next/types/**/*.ts" // Для type-safety с App Router
+  ],
+  "exclude": ["node_modules"]
 }
