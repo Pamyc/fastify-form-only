@@ -1,11 +1,11 @@
 "use client"
 
 import { FormEvent, useEffect, useMemo, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Button } from "./ui/button"
+import { Input } from "./ui/input"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
 import { Download, RefreshCw, Search } from "lucide-react"
-import { useEventAnalysis } from "@/components/event-analysis-provider"
+import { useEventAnalysis } from "./event-analysis-provider"
 
 export function Header() {
   const { leadId, setLeadId, load, loading, stats, references, error, filters, setFilters, filteredEvents } =
