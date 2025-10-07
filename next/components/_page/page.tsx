@@ -1,9 +1,9 @@
 // next/components/_page/page.tsx
-'use client';
+'use client'
 
-import ThemeProvider from '@/theme-provider';
-import { EventAnalysisProvider } from '@/event-analysis-provider';
-import EventAnalysisApp from '@/event-analysis-app';
+import ThemeProvider from '@/components/theme-provider'
+import { EventAnalysisProvider } from '@/components/event-analysis-provider'
+import EventAnalysisApp from '@/components/event-analysis-app'
 
 export default function PageAdapter() {
   return (
@@ -12,5 +12,5 @@ export default function PageAdapter() {
         <EventAnalysisApp />
       </EventAnalysisProvider>
     </ThemeProvider>
-  );
+  )
 }
